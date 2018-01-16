@@ -10,12 +10,20 @@ class App extends React.Component {
     render() {
         return (
             <ul>
-               Hello world
+               {
+                   this.props.todos.map((todo, index)=>{
+                       return (
+                           <li key={index}>
+                               {todo.text}
+                           </li>
+                       )
+                   })
+               }
             </ul>
         )
     }
     componentDidMount() {
-        console.log(this.props);
+        console.log(this.props.todos);
     }
 }
 

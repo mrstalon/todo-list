@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux';
 
-const initialState = {
+export const initialState = {
     todos: [
         {
             text: '1',
@@ -19,7 +19,7 @@ const initialState = {
 
 
 
-function todos(state = initialState, action) {
+export function todosReducer(state = initialState, action) {
 
     switch(action.type ){
         case 'ADD_TODO':
@@ -30,7 +30,7 @@ function todos(state = initialState, action) {
                   {
                       text: action.text,
                       completed: false
-                  }
+                  } 
               ]
           })
 
@@ -38,7 +38,5 @@ function todos(state = initialState, action) {
     }
 }
 
-export const mainReducer = combineReducers({
-    todos
-})
+
 
