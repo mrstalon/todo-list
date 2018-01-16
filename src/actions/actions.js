@@ -8,10 +8,4 @@ export function addTodo(text) {
     }
 }
 
-export function toggleTode(index) {
-    return {
-        type: TOGGLE_TODO,
-        index
-    }
-}
 
