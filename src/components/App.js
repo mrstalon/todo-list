@@ -1,40 +1,24 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { Route } from 'react-router-dom';
+import CategoryList from './Category-List';
+import TaskList from './Task-List';
 
+import AddTodo from './AddTodo';
 
 class App extends React.Component {
-    constructor(props){
-        super(props);
-    }
 
     render() {
         return (
-            <ul>
-               {
-                   this.props.todos.map((todo, index)=>{
-                       return (
-                           <li key={index}>
-                               {todo.text}
-                           </li>
-                       )
-                   })
-               }
-            </ul>
-        )
-    }
-    componentDidMount() {
-        console.log(this.props.todos);
+            <div className="app-container">
+                <Route path='/' component={CategoryList} />
+                <div className="task-list-container">
+                    <Route path='/tasks' component={AddTodo} />
+                    <Route path='/tasks' component={TaskList} />
+                </div>
+
+            </div>
+        );
     }
 }
 
-
-
-
-function mapStateToProps(state) {
-    return {
-        todos: state.todos
-    }
-}
-
-
-export default connect(mapStateToProps)(App);
+export default App;
