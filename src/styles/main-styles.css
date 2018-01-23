@@ -24,28 +24,35 @@ body {
 .category-list {
     height: 100%;
     list-style-type: none;
-    overflow: hidden;
+    overflow: scroll;
+    width: 92%;
 }
 
 .root-category {
     width: 95%;
     height: 50px;
-    font-size: 30px;
+    font-size: 22px;
     background-color: dimgray;
     border-radius: 25px;
     padding: 5px;
     margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .child-category {
     width: 87%;
     height: 50px;
-    font-size: 30px;
+    font-size: 22px;
     background-color: dimgray;
     border-radius: 25px;
     padding: 5px;
     margin-top: 5px;
     margin-left: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .child-category:hover {
@@ -82,6 +89,7 @@ body {
     flex-direction: row;
     align-items: center;
     margin-top: 18px;
+    justify-content: space-between;
 }
 
 ::-webkit-scrollbar {
@@ -90,8 +98,239 @@ body {
 
 .root-category > h3 {
     margin-top: 0px;
+    width: fit-content;
 }
 
 .child-category > h3 {
     margin-top: 0px;
+    width: fit-content;
+}
+
+.category-list-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.child-category > :first-child > div > input {
+    width: 20px;
+    height: 20px;
+}
+
+.root-category > :first-child > input { 
+    width: 20px;
+    height: 20px;
+}
+
+.root-category > :first-child {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.child-category > :first-child {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.child-category > div > input {
+    width: 20px;
+    height: 20px;
+}
+
+.child-category > div > form {
+    margin-right: 54px;
+    margin-bottom: 9px;
+}
+
+.add-nested-category-button:hover {
+    cursor: pointer;
+}
+
+.add-nested-category-button > img {
+    width: 15px;
+    height: 17px;
+}
+
+.root-category > :last-child {
+    margin-top: 10px;
+    margin-right: 5px;
+}
+
+.child-category > :last-child {
+    margin-top: 10px;
+    margin-right: 5px;
+}
+
+.task-list > h1 {
+    margin-left: 310px;
+}
+
+.todo > h2 {
+    margin-left: 15px;
+}
+
+.change-category-name-button {
+    margin-left: 9px;
+}
+
+.change-category-name-button:hover {
+    cursor: pointer;
+}
+
+.change-category-name-button > img {
+    width: 18px;
+    height: 18px;
+}
+
+.delete-category-button {
+    margin-right: 8px;
+}
+
+.delete-category-button:hover {
+    cursor: pointer;
+}
+
+.delete-category-button > img {
+    width: 17px;
+}
+
+.root-category > :first-child > h3 {
+    max-width: 200px;
+    overflow: hidden;
+}
+
+.child-category > :first-child > div > h3 {
+    max-width: 200px;
+    overflow: hidden;
+}
+
+.child-category > div > div {
+    display: flex;
+    flex-direction: rpw;
+    flex-direction: row;
+    align-items: center;
+}
+
+.change-task-name-button {
+    margin-left: 5px;
+}
+
+.change-task-name-button:hover {
+    cursor: pointer;
+}
+
+.change-task-name-button > img {
+    width: 18px;
+    height: 18px;
+}
+
+.todo > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.todo > div > h2 {
+    margin-left: 8px;
+}
+
+.task-edit-mode-container {
+    margin-left: 90px;
+    width: 500px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.task-edit-mode-container > h1 {
+    font-size: 43px;
+}
+
+.change-name-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.change-name-container > input {
+    height: 25px;
+    font-size: 18px;
+}
+
+.change-name-container > h3 {
+    margin-left: 27px;
+    font-size: 24px;
+}
+
+.task-edit-mode-container > h2 {
+    font-size: 27px;
+}
+
+.task-edit-mode-container > textarea {
+    width: 300px;
+    height: 500px;
+}
+
+.complete-checkbox-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 21px;
+}
+
+.save-edit-mode-changes-button {
+    height: 60px;
+    width: 90px;
+}
+
+.delete-task-button {
+    margin-right: 20px;
+}
+
+.delete-task-button:hover {
+    cursor: pointer;
+}
+
+.delete-task-button > img {
+    width: 18px;
+    height: 18px;
+}
+
+.progress-bar-container {
+    background-color: darkgray;
+    height: 15px;
+    width: 600px;
+    margin-top: 13px;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: black;
+}
+
+.todo > :first-child > input {
+    width: 39px;
+    height: 24px;
+}
+
+.progress-bar-name {
+    margin-left: 35%;
+}
+
+.task-render-setting-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+.task-render-setting-container > input {
+    height: 34px;
+    width: 29px;
 }

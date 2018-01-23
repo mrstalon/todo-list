@@ -16,7 +16,12 @@ class CategoryList extends React.Component {
                         this.props.categoryList.map((category, index) => {
                             return (
                                 <li key={index}>
-                                    <Category name={category.categoryName} id={category.id} className="root-category" history={this.props.history} />
+                                    <Category name={category.categoryName}
+                                        id={category.id}
+                                        className="root-category"
+                                        history={this.props.history}
+                                        category={category}
+                                    />
                                     {category.children.map((childCategory, childIndex) => {
                                         if (category.isChoosed) {
                                             return (
@@ -25,6 +30,7 @@ class CategoryList extends React.Component {
                                                     key={childIndex}
                                                     className="child-category"
                                                     history={this.props.history}
+                                                    category={childCategory}
                                                 />
                                             );
                                         }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addTodo, changeTodoToAddName } from '../actions/todo-actions';
-
+import PropTypes from 'prop-types';
+import { addTodo, changeTodoToAddName, changeTaskToRender } from '../actions/todo-actions';
 
 class AddTodo extends React.Component {
     constructor(props) {
@@ -33,12 +33,18 @@ class AddTodo extends React.Component {
 }
 
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps(dispatch, ownProps) {
     return {
         addTodo: () => dispatch(addTodo()),
         changeTodoToAddName: (todoName) => dispatch(changeTodoToAddName(todoName)),
     };
 }
 
+function mapStateToProps(state) {
+    return {
+        choosedCategoryId: state.choosedCategoryId,
+    };
+}
 
-export default connect(null, mapDispatchToProps)(AddTodo);
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddTodo);
